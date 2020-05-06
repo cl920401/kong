@@ -953,6 +953,8 @@ return {
   },
   preread = {
     before = function(ctx)
+      var.host_port = kong.configuration[var.server_port] or var.server_port
+
       local router = get_updated_router()
 
       local match_t = router.exec()
@@ -986,6 +988,8 @@ return {
   },
   rewrite = {
     before = function(ctx)
+      var.host_port = kong.configuration[var.server_port] or var.server_port
+
       -- special handling for proxy-authorization and te headers in case
       -- the plugin(s) want to specify them (store the original)
       ctx.http_proxy_authorization = var.http_proxy_authorization
@@ -1012,7 +1016,8 @@ return {
       local http_version   = ngx.req.http_version()
       local scheme         = var.scheme
       local host           = var.host
-      local port           = tonumber(var.server_port, 10)
+      local port           = tonumber(var.host_port, 10)
+                          or tonumber(var.server_port, 10)
       local content_type   = var.content_type
 
       local route          = match_t.route

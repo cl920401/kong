@@ -1,5 +1,7 @@
 return [[
 prefix = /usr/local/kong/
+port_map = NONE
+host_ports = NONE
 log_level = notice
 proxy_access_log = logs/access.log
 proxy_error_log = logs/error.log

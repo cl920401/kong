@@ -104,6 +104,7 @@ server {
 > end
 
     preread_by_lua_block {
+        set $host_port '';
         Kong.preread()
     }
 

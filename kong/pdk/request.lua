@@ -30,7 +30,6 @@ cjson.decode_array_with_array_mt(true)
 local function new(self)
   local _REQUEST = {}
 
-
   local MIN_HEADERS            = 1
   local MAX_HEADERS_DEFAULT    = 100
   local MAX_HEADERS            = 1000
@@ -232,7 +231,7 @@ local function new(self)
       end
     end
 
-    return _REQUEST.get_port()
+    return ngx.var.host_port or _REQUEST.get_port()
   end
 
 

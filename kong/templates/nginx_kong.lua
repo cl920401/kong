@@ -126,6 +126,7 @@ server {
         default_type                     '';
 
         set $ctx_ref                     '';
+        set $host_port                   '';
         set $upstream_te                 '';
         set $upstream_host               '';
         set $upstream_upgrade            '';

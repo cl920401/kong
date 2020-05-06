@@ -146,6 +146,7 @@ http {
             default_type                     '';
 
             set $ctx_ref                     '';
+            set $host_port                   '';
             set $upstream_te                 '';
             set $upstream_host               '';
             set $upstream_upgrade            '';
@@ -723,6 +724,7 @@ stream {
         }
 > end
         preread_by_lua_block {
+            set $host_port '';
             Kong.preread()
         }
 
