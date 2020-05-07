@@ -34,6 +34,7 @@ local plugins = {
   "proxy-cache",
   "session",
   "acme",
+  "custom-plugin",
 }
 
 local plugin_map = {}
