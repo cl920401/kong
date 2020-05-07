@@ -11,7 +11,6 @@ RUN yum install -y yum-utils  epel-release \
 ENV KONG_VERSION 1.2.1
 
 COPY ./kong  /kong
-COPY ./kong.sh /kong.sh
 COPY ./kong.conf /kong.conf
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 
